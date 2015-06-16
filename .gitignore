@@ -220,3 +220,8 @@ canvasTest/node_modules
 canvasTest/build
 canvasTest/bower_components
 canvasTest/.DS_Store
+
+firstGame/node_modules
+firstGame/build
+firstGame/bower_components
+firstGame/.DS_Store
