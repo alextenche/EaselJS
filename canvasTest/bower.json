@@ -1,0 +1,13 @@
+{
+	"name": "adv-canvas",
+	"version": "0.0.0",
+	"authors": [
+			"Alex Tenche <alex.tenche@gmail.com>"
+	],
+	"description": "tut for adv canvas",
+	"main": "index.html",
+	"license": "MIT",
+	"dependencies": {
+		"easeljs": "*"
+	}
+}
