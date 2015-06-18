@@ -225,3 +225,8 @@ firstGame/node_modules
 firstGame/build
 firstGame/bower_components
 firstGame/.DS_Store
+
+spaceGame/node_modules
+spaceGame/build
+spaceGame/bower_components
+spaceGame/.DS_Store
