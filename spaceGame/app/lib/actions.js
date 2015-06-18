@@ -7,22 +7,26 @@ var controls = {
 	37: 'moveleft',
 	39: 'moveright',
 	38: 'moveup',
-	40: 'movedown'
+	40: 'movedown',
+	32: 'fire1'
 };
 
 var currentActions = {};
+var stage;
 
 var actionService = module.exports = {
 	init: actions_init,
 	get: actions_get
 };
 
-function actions_init(win){
+function actions_init(win, currentStage){
+	stage = currentStage;
 	win = win || window;
 	EventDispatcher.initialize(actionService);
 
 	win.addEventListener('keydown', onKeyDown);
 	win.addEventListener('keyup', onKeyUp);
+	win.addEventListener('mousemove', onMouseMove);
 }
 
 
@@ -41,6 +45,22 @@ function onKeyUp(event){
 	var keyEvent = processEvent(event, 'up');
 	if(keyEvent){
 		delete currentActions[keyEvent.type];
+	}
+}
+
+function onMouseMove(){
+	var canvasEl = stage && stage.canvas;
+	if(!canvasEl) return;
+
+	var canvasXPos = canvasEl.offsetLeft;
+	var canvasYPos = canvasEl.offsetTop;
+
+	currentActions.mouse = {
+		winX: event.clientX,
+		winX: event.clientX,
+		stageX: event.clientX - canvasXPos,
+		stageY: event.clientY - canvasYPos,
+		target: event.target
 	}
 }
 
